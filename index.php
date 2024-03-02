@@ -336,29 +336,4 @@
   <script src="api-key.js"></script>
   <script src="script.js"></script>
 </body>
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDglxgkV7YLtvE_xx6wszqEStYHFgQKNL4",
-    authDomain: "isu-artifact-3.firebaseapp.com",
-    projectId: "isu-artifact-3",
-    storageBucket: "isu-artifact-3.appspot.com",
-    messagingSenderId: "701036286437",
-    appId: "1:701036286437:web:d958b9e6cbc837a45ddf0c",
-    measurementId: "G-W45FX4N00R"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-
 </html>
