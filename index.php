@@ -124,8 +124,7 @@
                 <label>Select Interest Type:</label>
               </td>
               <td>
-                <label><input type="radio" id="simpleInterest" name="type" checked>
-                   Simple</label>
+                <label><input type="radio" id="simpleInterest" name="type" checked>Simple</label>
               </td>
               <td id="simpleError">
                 <p></p>
@@ -134,8 +133,7 @@
             <tr>
               <td></td>
               <td>
-                <label><input type="radio" id="compoundInterest" name="type">
-                   Compound</label>
+                <label><input type="radio" id="compoundInterest" name="type">Compound</label>
               </td>
               <td id="compoundError">
                 <p></p>
