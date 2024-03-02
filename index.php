@@ -1,37 +1,43 @@
 <html>
+
 <head>
   <title>ISU Part 3</title>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
 </head>
+
 <body>
   <div class="grid-container">
     <div class="item1">
       <p class="title">ISU Part 3</p>
       <table style="width: 100%; margin: auto;">
-        <tr><td>
-          <button onclick="showContent('content1')">Budget Management</button>
-        </td></tr>
-        <tr><td>
-          <button onclick="showContent('content2')">Interest Calculator</button>
-        </td></tr>
-        <tr><td>
-          <button onclick="showContent('content3')">Stock App</button>
-        </td></tr>
-        <tr><td>
-          <button onclick="showContent('content4')">Currency Converter</button>
-        </td></tr>
-        <tr><td>
-          <button onclick="showContent('content5')">Appreciation & Depreciation Calculator</button>
-        </td></tr>
+        <tr>
+          <td>
+            <button onclick="showContent('content1')">Budget Management</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="showContent('content2')">Interest Calculator</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="showContent('content3')">Stock App</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="showContent('content4')">Currency Converter</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="showContent('content5')">Appreciation & Depreciation Calculator</button>
+          </td>
+        </tr>
       </table>
     </div>
     <div class="item2">
@@ -53,66 +59,54 @@
       </div>
 
       <div class="content content5" style="display: none;">
-      <p class="title">Appreciation & Depreciation Calculator</p></p>
+        <p class="title">Appreciation & Depreciation Calculator</p>
+        </p>
       </div>
 
       <div class="content content1" style="display: none;">
-      <p class="title">Budget Management</p>
-            <div class="sub-container">
-              <!-- Budget -->
-              <div class="total-amount-container">
-                <h3>Budget</h3>
-                <p class="hide error" id="budget-error">
-                  Value cannot be empty or negative
-                </p>
-                <input
-                  type="number"
-                  id="total-amount"
-                  placeholder="Enter Total Amount"
-                />
-                <button class="submit" id="total-amount-button">Set Budget</button>
-              </div>
-
-              <!-- Expenditure -->
-              <div class="user-amount-container">
-                <h3>Expenses</h3>
-                <p class="hide error" id="product-title-error">
-                  Values cannot be empty
-                </p>
-                <input
-                  type="text"
-                  class="product-title"
-                  id="product-title"
-                  placeholder="Enter Title of Product"
-                />
-                <input
-                  type="number"
-                  id="user-amount"
-                  placeholder="Enter Cost of Product"
-                />
-                <button class="submit" id="check-amount">Check Amount</button>
-              </div>
-            </div>
-            <!-- Output -->
-            <div class="output-container flex-space">
-              <div>
-                <p>Total Budget</p>
-                <span id="amount">0</span>
-              </div>
-              <div>
-                <p>Expenses</p>
-                <span id="expenditure-value">0</span>
-              </div>
-              <div>
-                <p>Balance</p>
-                <span id="balance-amount">0</span>
-              </div>
-            </div>
-          <!-- List -->
-          <div class="list">
-            <h3>Expense List</h3>
-            <div class="list-container" id="list"></div>
+        <p class="title">Budget Management</p>
+        <div class="sub-container">
+          <!-- Budget -->
+          <div class="total-amount-container">
+            <h3>Budget</h3>
+            <p class="hide error" id="budget-error">
+              Value cannot be empty or negative
+            </p>
+            <input type="number" id="total-amount" placeholder="Enter Total Amount" />
+            <button class="submit" id="total-amount-button">Set Budget</button>
           </div>
+
+          <!-- Expenditure -->
+          <div class="user-amount-container">
+            <h3>Expenses</h3>
+            <p class="hide error" id="product-title-error">
+              Values cannot be empty
+            </p>
+            <input type="text" class="product-title" id="product-title" placeholder="Enter Title of Product" />
+            <input type="number" id="user-amount" placeholder="Enter Cost of Product" />
+            <button class="submit" id="check-amount">Check Amount</button>
+          </div>
+        </div>
+        <!-- Output -->
+        <div class="output-container flex-space">
+          <div>
+            <p>Total Budget</p>
+            <span id="amount">0</span>
+          </div>
+          <div>
+            <p>Expenses</p>
+            <span id="expenditure-value">0</span>
+          </div>
+          <div>
+            <p>Balance</p>
+            <span id="balance-amount">0</span>
+          </div>
+        </div>
+        <!-- List -->
+        <div class="list">
+          <h3>Expense List</h3>
+          <div class="list-container" id="list"></div>
+        </div>
       </div>
 
       <div class="content content2" style="display: none;">
@@ -194,59 +188,65 @@
         <button id="calculateButton" onclick="calculateInterest()" style="width:125px;">Calculate</button>
         <br>
         <br>
-          <p class="title">Results</p>
-          <div id="results" style="margin: 0px;">
-            <table class='resultTable'><tr><th>Year</th><th>Interest (per year)</th><th>Total Amount</th></tr>
-              <?php 
-              for ( $i = 1; $i <= 15; $i++ ) {
-                echo "
+        <p class="title">Results</p>
+        <div id="results" style="margin: 0px;">
+          <table class='resultTable'>
+            <tr>
+              <th>Year</th>
+              <th>Interest (per year)</th>
+              <th>Total Amount</th>
+            </tr>
+            <?php
+            for ($i = 1; $i <= 15; $i++) {
+              echo "
                   <tr>
                   <td style='text-align: center;'>$i</td>
                   <td style='text-align: right;'>$0.00</td>
                   <td style='text-align: right;'>$0.00</td>
                   </tr>
                   ";
-              }
-              ?>
-            </table>
-          </div>
-    </div>
+            }
+            ?>
+          </table>
+        </div>
+      </div>
 
       <div class="content content3" style="display: none;">
         <p class="title">Stock App</p>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <style>
+          canvas {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: 400px;
+            /* Increase the height for better visibility */
+          }
 
-            canvas {
-                display: block;
-                margin: 20px auto;
-                max-width: 100%;
-                height: 400px; /* Increase the height for better visibility */
-            }
+          label {
+            display: block;
+            margin-bottom: 10px;
+          }
 
-            label {
-                display: block;
-                margin-bottom: 10px;
-            }
+          input {
+            padding: 8px;
+            width: 60%;
+            font-size: 16px;
+          }
 
-            input {
-                padding: 8px;
-                width: 60%;
-                font-size: 16px;
-            }
+          #stockInfo {
+            margin-top: 20px;
+          }
 
-            #stockInfo {
-                margin-top: 20px;
-            }
-
-            #peRatio {
-                margin-top: 20px;
-                font-weight: bold;
-            }
+          #peRatio {
+            margin-top: 20px;
+            font-weight: bold;
+          }
         </style>
+
         <body>
 
-        <main>
+          <main>
             <label for="ticker">Enter Stock Ticker:</label>
             <input type="text" id="ticker" placeholder="E.g: AAPL, MSFT">
             <button onclick="fetchStockData()">Get Stock Data</button>
@@ -255,85 +255,86 @@
 
             <div id="stockInfo"></div>
             <div id="peRatio"></div>
-        </main>
+          </main>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                window.fetchStockData = async function () {
-                    const ticker = document.getElementById('ticker').value.toUpperCase();
-                    const apiKey = '2X8AHKH6M7SLGS8H'; // Replace with your Alpha Vantage API key
-                    const apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${apiKey}`;
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              window.fetchStockData = async function() {
+                const ticker = document.getElementById('ticker').value.toUpperCase();
+                const apiKey = '2X8AHKH6M7SLGS8H'; // Replace with your Alpha Vantage API key
+                const apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${apiKey}`;
 
-                    try {
-                        const response = await fetch(apiUrl);
-                        const data = await response.json();
+                try {
+                  const response = await fetch(apiUrl);
+                  const data = await response.json();
 
-                        if (data['Time Series (Daily)']) {
-                            const stockData = Object.entries(data['Time Series (Daily)']).map(([date, entry]) => ({
-                                date,
-                                close: parseFloat(entry['4. close']),
-                                high: parseFloat(entry['2. high']),
-                                low: parseFloat(entry['3. low']),
-                                open: parseFloat(entry['1. open']),
-                                volume: parseFloat(entry['5. volume'])
-                            }));
+                  if (data['Time Series (Daily)']) {
+                    const stockData = Object.entries(data['Time Series (Daily)']).map(([date, entry]) => ({
+                      date,
+                      close: parseFloat(entry['4. close']),
+                      high: parseFloat(entry['2. high']),
+                      low: parseFloat(entry['3. low']),
+                      open: parseFloat(entry['1. open']),
+                      volume: parseFloat(entry['5. volume'])
+                    }));
 
-                            createStockChart(stockData.reverse());
-                            displayStockInfo(stockData);
-                            calculatePE(stockData);
-                        } else {
-                            alert('No data available for the given ticker');
-                        }
-                    } catch (error) {
-                        console.error('Error fetching stock data:', error);
-                    }
-                };
-
-                function createStockChart(stockData) {
-                    const dates = stockData.map(entry => entry.date);
-                    const closingPrices = stockData.map(entry => entry.close);
-
-                    const ctx = document.getElementById('stockChart').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: dates,
-                            datasets: [{
-                                label: 'Closing Prices',
-                                borderColor: 'rgb(75, 192, 192)',
-                                data: closingPrices,
-                            }]
-                        }
-                    });
+                    createStockChart(stockData.reverse());
+                    displayStockInfo(stockData);
+                    calculatePE(stockData);
+                  } else {
+                    alert('No data available for the given ticker');
+                  }
+                } catch (error) {
+                  console.error('Error fetching stock data:', error);
                 }
+              };
 
-                function displayStockInfo(stockData) {
-                    const latestEntry = stockData[stockData.length - 1];
+              function createStockChart(stockData) {
+                const dates = stockData.map(entry => entry.date);
+                const closingPrices = stockData.map(entry => entry.close);
 
-                    document.getElementById('stockInfo').innerHTML = `
+                const ctx = document.getElementById('stockChart').getContext('2d');
+                new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                    labels: dates,
+                    datasets: [{
+                      label: 'Closing Prices',
+                      borderColor: 'rgb(75, 192, 192)',
+                      data: closingPrices,
+                    }]
+                  }
+                });
+              }
+
+              function displayStockInfo(stockData) {
+                const latestEntry = stockData[stockData.length - 1];
+
+                document.getElementById('stockInfo').innerHTML = `
                         <p>Current Stock Price: ${latestEntry.close.toFixed(2)}</p>
                         <p>Today's High: ${latestEntry.high.toFixed(2)}</p>
                         <p>Today's Low: ${latestEntry.low.toFixed(2)}</p>
                         <p>Today's Volume: ${latestEntry.volume.toFixed(2)}</p>
                         <p>Today's Open Price: ${latestEntry.open.toFixed(2)}</p>
                     `;
-                }
+              }
 
-                function calculatePE(stockData) {
-                    const latestClosingPrice = stockData[stockData.length - 1].close;
-                    const earningsPerShare = 5;  // Replace with actual earnings per share
-                    const peRatio = latestClosingPrice / earningsPerShare;
+              function calculatePE(stockData) {
+                const latestClosingPrice = stockData[stockData.length - 1].close;
+                const earningsPerShare = 5; // Replace with actual earnings per share
+                const peRatio = latestClosingPrice / earningsPerShare;
 
-                    document.getElementById('peRatio').innerHTML = `<p>P/E Ratio: ${peRatio.toFixed(2)}</p>`;
-                }
+                document.getElementById('peRatio').innerHTML = `<p>P/E Ratio: ${peRatio.toFixed(2)}</p>`;
+              }
             });
-        </script>
+          </script>
       </div>
     </div>
-          
+
   </div>
   <script src="currency-codes.js"></script>
   <script src="api-key.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
