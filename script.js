@@ -100,7 +100,7 @@ function calculateInterest() {
 
 
 
-  const timesPerYear = {"Annually" : 1,"Semiannually" : 2,"Quarterly" : 4,"Monthly" : 12};
+  const timesPerYear = { "Annually": 1, "Semiannually": 2, "Quarterly": 4, "Monthly": 12 };
   var times = duration * timesPerYear[freq];
 
 
@@ -108,7 +108,7 @@ function calculateInterest() {
     rate = rate / 100;
     var output = "<table class='resultTable'><tr><th>Year</th><th>Interest (per year)</th><th>Total Amount</th></tr>";
     if (simpleInterest) {
-      for (var i = timesPerYear[freq]; i <= times; i+=timesPerYear[freq]) {
+      for (var i = timesPerYear[freq]; i <= times; i += timesPerYear[freq]) {
         var total = principal + principal * rate * i;
         var year = Math.ceil(i / timesPerYear[freq]);
         output += "<tr><td style='text-align: center;'>" + year + "</td>";
@@ -116,11 +116,11 @@ function calculateInterest() {
         output += "<td style='text-align: right;'>$" + total.toFixed(2) + "</td></tr>";
       }
     } else {
-      for (var i = timesPerYear[freq]; i <= times; i+=timesPerYear[freq]) {
+      for (var i = timesPerYear[freq]; i <= times; i += timesPerYear[freq]) {
         var total = principal * (1 + rate) ** i;
         var year = Math.ceil(i / timesPerYear[freq]);
         output += "<tr><td style='text-align: center;'>" + year + "</td>";
-        output += "<td style='text-align: right;'>$" + (principal * (1 + rate) ** i - principal * (1 + rate) ** (i-timesPerYear[freq])).toFixed(2) + "</td>";
+        output += "<td style='text-align: right;'>$" + (principal * (1 + rate) ** i - principal * (1 + rate) ** (i - timesPerYear[freq])).toFixed(2) + "</td>";
         output += "<td style='text-align: right;'>$" + total.toFixed(2) + "</td></tr>";
       }
     }
